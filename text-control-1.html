@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .control {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      .control legend {
+        text-align: center;
+        font-weight: bold;
+      }
+      #output {
+        margin-top: 20px;
+        font-size: 16px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset class="control">
+      <legend>Text Control</legend>
+      <div>
+        <label for="">Text Input</label>
+        <input type="text" name="" id="textInput" />
+      </div>
+      <div>
+        <label for="">Text color</label>
+        <input type="color" name="" id="textColor" />
+      </div>
+      <div>
+        <label for="">Font Size</label>
+        <input
+          type="range"
+          name=""
+          min="16"
+          max="100"
+          value="=16"
+          step="1"
+          id="inputFontsize"
+        />
+      </div>
+      <div>
+        <label for="">Font Style</label>
+        <select name="" id="inputFont"></select>
+      </div>
+    </fieldset>
+    <div id="output"></div>
+    <script>
+      // variable
+      const fonts = [
+        "Arial",
+        "Bauhaus 93",
+        "Bell MT",
+        "Blackadder ITC",
+        "Gabriola",
+        "Harrington",
+        "Copperplate Gothic",
+      ];
+
+      // selectors
+      const textInput = document.querySelector("#textInput");
+      const textColor = document.querySelector("#textColor");
+      const inputFontsize = document.querySelector("#inputFontsize");
+      const output = document.querySelector("#output");
+      const inputFont = document.querySelector("#inputFont");
+      //   function
+      const createOption = (text, value) => {
+        const option = document.createElement("option");
+        option.innerText = text;
+        option.value = value;
+        return option;
+      };
+    //   console.log(createOption("apple", "i"));
+      //processes
+      fonts.forEach((font) => {
+        // inputFont.append(createOption(font, font));
+        inputFont.append(new Option(font,font))
+      });
+      textInput.addEventListener("keyup", () => {
+        output.innerText = textInput.value;
+      });
+      textColor.addEventListener("change", () => {
+        output.style.color = textColor.value;
+      });
+      inputFontsize.addEventListener("mousemove", () => {
+        output.style.fontSize = inputFontsize.value + "px";
+      });
+      inputFont.addEventListener("change",() => {
+        output.style.fontFamily=inputFont.value;
+      })
+    </script>
+  </body>
+</html>

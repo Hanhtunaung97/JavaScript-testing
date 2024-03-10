@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <div class="m-5">
+      <h1 class="text-3xl font-serif text-sky-500 font-bold mb-3">
+        Photo Uploader Box
+      </h1>
+      <div
+        id="uploaderUi"
+        class="p-5 border-2 border-dashed border-sky-400 min-h-40 flex gap-x-3 mb-5 overflow-x-scroll"
+      >
+        <div
+          class="min-h-40 w-full hidden last:flex flex-col justify-center items-center select-none cursor-pointer group"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-10 h-10 mb-3 stroke-1 stroke-sky-500 fill-sky-100 group-hover:scale-75 group-active:scale-125 duration-200"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15"
+            />
+          </svg>
+
+          <p class="text-sky-400">Please Select to upload</p>
+        </div>
+    </div>
+    <button form="photoUploadForm  " class="py-2 px-4 rounded-lg bg-sky-500 text-sky-100">Upload</button>
+    </div>
+    <div class="m-5 hidden">
+      <form id="photoUploadForm" method="post" enctype="multipart/form-data" action="https://google.com">
+        <input type="file" name="photos[]" id="photos" multiple />
+        <button class="px-3 py-2 border-2 border-neutral-500">submit</button>
+      </form>
+    </div>
+
+    <script src="./src/js/app.js"></script>
+  </body>
+</html>

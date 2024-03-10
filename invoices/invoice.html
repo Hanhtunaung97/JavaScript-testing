@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Task</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <main id="app">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4">
+            <header class="py-4 mb-3">
+              <h1 class="fw-bold">MMS Solutions</h1>
+              <h4 class="fw-bold text-black-50">Invoices</h4>
+            </header>
+            <form action="" id="recordForm" class="d-print-none">
+              <div class="row align-items-end bg-primary-subtle py-3 mb-3">
+                <div class="col">
+                  <label for="productSelect" class="form-label"
+                    >Product Select</label
+                  >
+                  <select
+                    name="productSelect"
+                    class="form-select"
+                    id="productSelect"
+                    required
+                  ></select>
+                </div>
+                <div class="col">
+                  <label for="quantityInput" class="form-label">Quantity</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="quantityInput"
+                    id="quantityInput"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary w-100" id="recordAddBtn">
+                    Add Record
+                  </button>
+                </div>
+              </div>
+            </form>
+            <table class="table">
+              <thead>
+                <tr class="table-primary">
+                  <th>#</th>
+                  <th>Product</th>
+                  <th class="text-end">Price</th>
+                  <th class="text-end">Quantity</th>
+                  <th class="text-end">Cost</th>
+                </tr>
+              </thead>
+              <tbody id="records">
+                <tr class="empty-row">
+                  <td colspan="5" class="text-center">There is no list.</td>
+                </tr>
+                <!-- <tr class="record-row">
+                                <td>1</td>
+                                <td>apple</td>
+                                <td class="text-end">50</td>
+                                <td class="text-end">3</td>
+                                <td class="text-end">150</td>
+                            </tr> -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" class="text-center">Total</td>
+                  <td class="text-end" id="totalCost"></td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <div class="text-end d-print-none">
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#myInventory"
+                aria-controls="myInventory"
+              >
+                Inventory
+              </button>
+              <button class="btn btn-primary">
+                <i class="bi bi-printer" id="printer"></i>
+              </button>
+            </div>
+            <div class="text-center fw-bold mt-4 d-none d-print-block">
+              <p>Thank your for your support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="myInventory"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <div class="offcanvas-title" id="offcanvasExampleLabel">
+            <h1 class="fw-bold">Manage Inventory</h1>
+            <h4 class="fw-bold text-black-50">Available Items</h4>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="list-group" id="itemsLists"></ul>
+
+          <form action="" class="bg-primary-subtle p-3 mt-3" id="newItemForm">
+            <div class="mb-3">
+              <label for="" class="form-label">Enter new product</label>
+              <input
+                type="text"
+                name="new_item_name"
+                class="form-control"
+                id=""
+                required
+              />
+            </div>
+
+            <div class="row d-flex g-3 align-items-end">
+              <div class="col-8">
+                <input
+                  type="number"
+                  name="new_item_price"
+                  placeholder="Enter Price"
+                  class="form-control"
+                  id=""
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <button class="btn btn-primary d-block w-100">Add New</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

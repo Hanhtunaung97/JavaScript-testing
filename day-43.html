@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- <div class="m-5">
+      <table class="table one">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table class="table two">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+    <div class="m-5">
+      <!-- <h1 class="text-primary bg-primary-subtle p-3 text-center rounded-3">Min Ga Lar Par</h1> -->
+      <!-- <a href="https://google.com" class="btn btn-success">Google</a>
+        <img src="./Image/2.jpg" width="300px"  alt=""> -->
+      <!-- <input type="file" name="" id="inputFile" class="form-input" multiple> -->
+    </div>
+    <div class="m-5">
+      <div class="mb-3">
+        <label for="" class="form-label">Select Gender</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+          />
+          <label class="form-check-label" for="male"> Male </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+          />
+          <label class="form-check-label" for="female">
+            Female
+          </label>
+        </div>
+      </div>
+      <select name="" id="nations" class="form-select mb-3">
+        <option value="mm">Myanmar</option>
+        <option value="usa">United State</option>
+        <option value="kra">Korea</option>
+        <option value="jpn">Japan</option>
+        <option value="sgp">Singapore</option>
+      </select>
+      <button class="btn btn bg-primary" id="btn">Selection Nation</button>
+    </div>
+    <script>
+        const btn=document.querySelector("#btn")
+        const nations=document.querySelector("#nations")
+        const genders=document.querySelectorAll("[name=gender]")
+        btn.addEventListener("click",() => {
+            // console.log([...genders].find(el=>
+            //     el.checked===true
+            // ).value);
+            console.log(document.querySelector("[name=gender]:checked").value);
+            console.log(nations.value);
+        })
+      // const inputFile=document.querySelector("#inputFile")
+      // console.log(inputFile);
+      // const img=document.querySelector("img")
+      // console.log(img);
+      // console.log(img.src);
+      // console.log(img.getAttribute("src"));
+      // console.log(img.setAttribute("src","./Image/3.jpg"));
+      // const link=document.querySelector("a");
+      // console.dir(link);
+      // console.log(link.href);
+      // link.href="https://youtube.com"
+      // console.log(link.href);
+      // link.target="_blank"
+      // console.log(link.target);
+      // console.log(link.getAttribute("href"));
+      // console.log(link.setAttribute("href","https://mms-it.com"));
+      // console.log(link.getAttribute("href"));
+      // console.log(link.setAttribute("data-id",9));
+      // console.log(link.getAttribute("data-id"));
+      // console.log(link.setAttribute("href"));
+
+      // const h1=document.querySelector("h1");
+      // console.log(window.getComputedStyle(h1).color);
+      // console.log(window.getComputedStyle(h1).fontSize);
+      // console.log(window.getComputedStyle(h1).backgroundColor);
+      // console.log(window.getComputedStyle(h1).width);
+      // // console.log(h1.className);
+      // // h1.className="text-success text-center"
+      // console.log(h1.classList);
+      // console.dir(h1);
+      // console.log(h1.style);
+      // // access
+      // console.log(h1.style.color);
+      // console.log(h1.style.backgroundColor);
+      // // overwrite
+      // h1.style.color="cyan";
+      // h1.style.backgroundColor="darkred"
+    </script>
+  </body>
+</html>

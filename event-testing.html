@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #one,
+      #two {
+        border: 2px solid black;
+        padding: 30px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="userInput" />
+    <button id="btn">Click me</button>
+    <div>
+      <h1 id="title">HELLO</h1>
+      <button id="btnChange">ChangeBtn</button>
+    </div>
+    <div id="one">
+      <div id="two">
+        <button id="three">Btn Three</button>
+      </div>
+    </div>
+    <div>
+      <button id="btnEvent">Events</button>
+    </div>
+    <input type="text" name="" id="eventInput" />
+    <ul>
+      <li>apple</li>
+      <li>mango</li>
+      <li>orange</li>
+    </ul>
+    <script>
+      const userInput = document.querySelector("#userInput");
+      const btn = document.querySelector("#btn");
+      const btnChange = document.querySelector("#btnChange");
+      const title = document.querySelector("#title");
+      const one = document.querySelector("#one");
+      const two = document.querySelector("#two");
+      const three = document.querySelector("#three");
+      const btnEvent = document.querySelector("#btnEvent");
+      const eventInput=document.querySelector("#eventInput");
+      const ul=document.querySelector("ul");
+      const lis=document.querySelectorAll("li");
+      let count = 1;
+
+      btn.addEventListener("click", (event) => {
+        console.log(event.target);
+      });
+      userInput.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          console.log(event.target.value);
+          event.target.value = null;
+        }
+      });
+      const handleBtnChange = () => {
+        title.innerText = "San Kyi Tar";
+        console.log(title.innerText);
+        count++;
+        count == 5 && btnChange.removeEventListener("click", handleBtnChange);
+      };
+
+      btnChange.addEventListener("click", handleBtnChange);
+
+      one.addEventListener("click",(event) => {
+        event.stopPropagation();
+
+        console.log("One");
+      })
+      two.addEventListener("click",(event) => {
+        event.stopPropagation();
+
+        console.log("Two");
+      })
+      three.addEventListener("click",(event) => {
+        event.stopPropagation();
+
+        console.log("Three");
+      })
+      const events=["click","mouseenter","mouseout"]
+      events.forEach(e=>{
+        btnEvent.addEventListener(e,(event) => {
+          console.log(event);
+          
+        })
+      })
+
+      // lis.forEach(li=>{
+      //   li.addEventListener("click",() => {
+      //     console.log(li.innerText);
+      //   })
+      // })
+      ul.addEventListener("click",(event) => {
+        console.log(event.target);
+        console.log(event.target.innerText);
+        
+      })
+      eventInput.addEventListener("keyup",(event) => {
+        if(event.key === "Enter"){
+          const newLi=document.createElement("li");
+          newLi.innerText=event.target.value;
+          // console.log(newLi.innerText);
+          ul.append(newLi);
+
+        }
+      })
+
+         // let count = 1;
+      // btn.addEventListener("click", (event) => {
+      //   console.log(event.target);
+      // });
+      // userInput.addEventListener("keyup", (event) => {
+      //   if (event.key === "Enter") {
+      //     console.log(event.target.value);
+      //     event.target.value = null;
+      //   }
+      // });
+      // const handleBtnChange = () => {
+      //   console.log("U change");
+      //   count++;
+      //   title.innerText = "San Kyi Tar";
+      //   count == 5 && btnChange.removeEventListener("click", handleBtnChange);
+      // };
+      // btnChange.addEventListener("click", handleBtnChange);
+      // one.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("One");
+      //   },
+      //   true
+      // );
+      // two.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("two");
+      //   },
+      //   true
+      // );
+      // three.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("three");
+      //   },
+      //   true
+      // );
+      // const events = ["click", "mouseenter", "mouseout"];
+      // events.forEach((el) => {
+      //   btnEvent.addEventListener(el, (e) => {
+      //     console.log(e);
+      //   });
+      // });
+      // const lis = document.querySelectorAll("li");
+      // const ul = document.querySelector("ul");
+      // const eventInput = document.querySelector("#eventInput");
+
+      // //   lis.forEach(li=>{
+      // //     li.addEventListener("click",() => {
+      // //         console.log(li.innerText);
+      // //     })
+      // //   })
+      // ul.addEventListener("click",(event) => {
+      //   console.log(event.target.innerText);
+      // })
+      // eventInput.addEventListener("keyup", (event) => {
+      //   if (event.key === "Enter") {
+      //     const newLi = document.createElement("li");
+      //     newLi.innerText = eventInput.value;
+      //     ul.append(newLi);
+      //     eventInput.value = null;
+      //   }
+      // });
+    </script>
+  </body>
+</html>

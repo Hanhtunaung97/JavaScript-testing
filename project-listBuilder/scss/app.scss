@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Padauk:wght@400;700&family=Rubik:wght@300;400;700&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+@import "../node_modules/animate.css/animate.min.css";
+
+$headings-font-family: "Montserrat", sans-serif;
+$font-family-sans-serif: "Rubik", "Padauk", sans-serif;
+$primary: #430d27;
+$border-radius: 0;
+$border-radius-lg: 0;
+$input-btn-border-width: 2px;
+$input-border-color: $primary;
+$form-check-input-border-radius: 0;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.slide-from-left{
+    animation:slideFromLeft 1s;
+}
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

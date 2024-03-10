@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Padauk:wght@400;700&family=Rubik:wght@300;400;700&display=swap');
+@import"../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/animate.css/animate.compat.css";
+$headings-font-family:'Libre Baskerville', serif;
+$font-family-sans-serif:'Rubik', 'Padauk',sans-serif;
+$primary:#581b98;
+$input-btn-border-width:2px;
+$input-border-color:$primary;
+$form-select-border-color:$primary;
+$form-select-border-color:$primary;
+$border-radius:0;
+$input-border-radius:0;
+$btn-border-radius-sm:0;
+
+
+
+
+
+
+
+
+@import"../node_modules/bootstrap/scss/bootstrap.scss";
+
+.empty-row:last-child{
+    display: table-row;
+}
+.empty-row{
+    display: none;
+}
+body {
+    counter-reset: row-count;
+  }
+  .row-num::before {
+    counter-increment: row-count;
+    content: counter(row-count) ;
+  }
+  .row-control{
+position: relative;
+  }
+  .row-delete{
+position: absolute;
+top: 5px;
+bottom: 0;
+left: 100%;
+opacity: 0;
+transform: translateX(15px);
+pointer-events: none;
+  }
+.row-control:hover .row-delete{
+opacity: 1;
+transform: translateX(0);
+pointer-events: all;
+}
+.row-quantity{
+display: inline-block;
+width: 10px;
+}
+.row-quantity-increment,.row-quantity-decrement{
+background-color: #ad8cd1;
+color: $primary;
+opacity: 0;
+pointer-events: none;
+user-select: none;
+cursor: pointer;
+}
+.row-quantity-increment{
+transform: translateX(10px);
+}
+.row-quantity-decrement{
+    transform: translateX(-10px);
+
+}
+.row-control:hover .row-quantity-increment,.row-control:hover .row-quantity-decrement{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.5s;
+    pointer-events: all;
+    }

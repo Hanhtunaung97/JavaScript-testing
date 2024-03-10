@@ -1,0 +1,1 @@
+ sass app.scss css/output.css --watch

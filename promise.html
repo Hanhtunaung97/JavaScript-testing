@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="run">Run</button>
+    <script>
+      const run = document.querySelector("#run");
+      run.addEventListener("click", () => {
+        let x;
+        // setTimeout(() => {
+        //   x=7;
+        // }, 2000);
+        // console.log(x);
+
+        // const p=new Promise((resolve,reject) => {
+
+        //   setTimeout(() => {
+        //     x=5;
+        //   resolve(x)
+        //   }, 2000);
+
+        // })
+        // p.then((data) => {
+        //   console.log(data);
+
+        // })
+        //   const p=new Promise((resolve,reject) => {
+        //     x=(Math.random()*10).toFixed(0);
+        //     if(x<5){
+        //       resolve(x)
+        //     }else{
+        //       reject(x);
+        //     }
+
+        //   })
+        // p.then((data) => {
+        //   console.log("resolve");
+        //   console.log(x);
+
+        // },(data) => {
+        //   console.log("reject");
+        //   console.log(x);
+
+        // })
+        // const p=new Promise((resolve,reject) => {
+        //   navigator.geolocation.getCurrentPosition((coords) => {
+        //     setTimeout(() => {
+        //       resolve(coords)
+        //     }, 2000);
+        //     p.then((data) => {
+        //       console.log(data);
+
+        //     })
+
+        //   })
+
+        // })
+
+        // console.log(x);
+
+        // const p = new Promise((resolve, reject) => {
+        //   setTimeout(() => {
+        //     x = 10;
+        //     resolve(x)
+        //   }, 2000);
+        // });
+        // p.then((data) => {
+        //   console.log(data);
+        // });
+        const p=new Promise((resolve,reject) => {
+          x=(Math.random()*10).toFixed(0);
+          if(x>5){
+            resolve(x)
+          }else{
+            reject(x)
+          }
+          
+        })
+        p.then((data) => {
+          console.log("resolve work");
+          console.log(data);
+          
+        },(data) => {
+          console.log("reject work");
+          console.log(data);
+          
+        })
+        const p1=new Promise((resolve,reject) => {
+          navigator.geolocation.getCurrentPosition((coords) => {
+            resolve(coords)
+            
+          })
+          
+          
+        })
+        p1.then((data) => {
+            console.log(data);
+            
+          })
+      });
+    </script>
+  </body>
+</html>

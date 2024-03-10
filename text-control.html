@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text control</title>
+    <style>
+      .text-control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+      }
+      .text-control legend {
+        text-align: center;
+      }
+      #output {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset class="text-control">
+      <legend>Text Control</legend>
+      <div>
+        <label for="">Text Input</label>
+        <input type="text" name="" id="textInput" />
+      </div>
+      <div>
+        <label for="">Text Color</label>
+        <input type="color" name="" id="textColorInput" />
+      </div>
+      <div>
+        <label for="">Font Size</label>
+        <input
+          type="range"
+          name=""
+          min="16"
+          max="100"
+          value="16"
+          step="1"
+          id="fontSizeInput"
+        />
+      </div>
+      <div>
+        <label for="">Font Style</label>
+        <select name="fontStyle" id="fontStyleInput"></select>
+      </div>
+    </fieldset>
+    <div id="output"></div>
+    <script>
+        // variables
+      fonts = [
+        "Arial",
+        "Bauhaus 93",
+        "Bell MT",
+        "Blackadder ITC",
+        "Gabriola",
+        "Harrington",
+        "Copperplate Gothic",
+      ];
+    //   selector
+      const textInput = document.querySelector("#textInput");
+      const textColorInput = document.querySelector("#textColorInput");
+      const fontSizeInput = document.querySelector("#fontSizeInput");
+      const fontStyleInput=document.querySelector("#fontStyleInput")
+      const output = document.querySelector("#output");
+    //   functions
+    const createOption= (text,value) => {
+        const option=document.createElement("option")
+        option.innerText=text;
+        option.value=value;
+        return option;
+        
+    }
+    // console.log(createOption("apple","i"));
+    
+    //   Process
+    fonts.forEach(font => {
+        // fontStyleInput.append(createOption(font,font))
+        fontStyleInput.append(new Option(font,font))
+    });
+      textInput.addEventListener("keyup", () => {
+        output.innerText = textInput.value;
+      });
+      textInput.addEventListener("blur", () => {
+        textInput.value = null;
+      });
+      textColorInput.addEventListener("change", () => {
+        output.style.color = textColorInput.value;
+      });
+      fontSizeInput.addEventListener("mousemove", () => {
+        output.style.fontSize = fontSizeInput.value + "px";
+      });
+      fontStyleInput.addEventListener("change",() => {
+        output.style.fontFamily=fontStyleInput.value;
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pixelify+Sans:wght@400;600&family=Rubik:wght@300;400;700&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/animate.css/animate.min.css";
+
+$primary: #071e3d;
+$headings-font-family: "Pixelify Sans", sans-serif;
+$font-family-sans-serif: "Montserrat", "Rubik", sans-serif;
+$font-size-base: 1.2rem;
+$border-radius: 0;
+$input-border-color: $primary;
+$input-btn-border-width: 2px;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.empty-record-row:last-child {
+  display: table-row;
+}
+.empty-record-row {
+  display: none;
+}
+body {
+  counter-reset: row-count;
+}
+
+.row-num::before {
+  counter-increment: row-count;
+  content: counter(row-count);
+}
+.row-control {
+  position: relative;
+}
+.row-delete {
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.5s;
+  pointer-events: none;
+}
+.record-row:hover .row-delete {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.row-quantity-increment,
+.row-quantity-decrement {
+  display: inline-block;
+  background-color: #ebf0f7;
+  color: $primary;
+  opacity: 0;
+  transition: 0.5s;
+  user-select: none;
+  cursor: pointer;
+  pointer-events: none;
+}
+.row-quantity {
+  display: inline-block;
+  width: 10px;
+}
+.row-quantity-increment {
+  transform: translateX(10px);
+}
+.row-quantity-decrement {
+  transform: translateX(-10px);
+}
+
+.record-row:hover .row-quantity-increment,
+.record-row:hover .row-quantity-decrement {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
